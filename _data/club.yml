@@ -1,0 +1,108 @@
+# =====================================================================
+#  MARTHA BRIGGS EDUCATIONAL CLUB: WEBSITE SETTINGS
+#
+#  This is the ONE file to edit for everyday updates. Every page reads
+#  from it, so a change here shows up everywhere on the site.
+#
+#  How to edit safely:
+#   * Change only the words inside the "quote marks".
+#   * Keep the quote marks, the colon, and the spaces at the start of
+#     each line exactly as they are.
+#   * Lines starting with # are notes for you. The website ignores them.
+#   * Anything in [SQUARE BRACKETS] is a placeholder waiting for real
+#     information. Replace the brackets too.
+#
+#  After you save ("Commit changes" on GitHub), the live site updates
+#  by itself in about one to two minutes.
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+#  CONTACT DETAILS (shown in the footer of every page and on Contact)
+# ---------------------------------------------------------------------
+contact:
+  email: "marthabriggsec@gmail.com"
+
+  # Street address or P.O. box only. The city is added after it.
+  mailing_address: "[MAILING ADDRESS]"
+  city: "New Bedford, Massachusetts"
+
+  # Paste the full link to the club's Facebook page, starting with https://
+  # While this is empty, the Facebook links on the site are hidden.
+  facebook_url: ""
+
+
+# ---------------------------------------------------------------------
+#  SCHOLARSHIPS (Scholarships page, Apply page and the home page)
+#  Update these once a year.
+# ---------------------------------------------------------------------
+scholarships:
+  # How the award amount should read, e.g. "$1,000 each"
+  award_amount: "[AWARD AMOUNT]"
+
+  # Who can apply, e.g. "graduating seniors who live in New Bedford"
+  eligibility: "[ELIGIBILITY]"
+
+  # The deadline as visitors should read it, e.g. "Friday, April 16, 2027"
+  deadline: "[DEADLINE]"
+
+  # OPTIONAL: the same deadline written as YEAR-MONTH-DAY, e.g. "2027-04-16".
+  # When filled in, a live "days left" countdown appears next to the deadline.
+  # Leave it as "" for no countdown.
+  deadline_date: ""
+
+  # Roughly how many scholarships are given each year (a number, no quotes).
+  awards_per_year: 10
+
+  # The application form. First upload the PDF into the "files" folder,
+  # then type its name here, e.g. "files/application-2027.pdf".
+  # While this is empty, the download buttons ask people to email the club instead.
+  application_pdf: ""
+
+  # The "What to include" checklist on the Scholarships page.
+  # One item per line. Each line starts with a dash and a space: - "..."
+  # Add or remove lines as needed.
+  checklist:
+    - "The completed application"
+    - "An essay: [ESSAY TOPIC AND LENGTH]"
+    - "[NUMBER] letter(s) of recommendation"
+    - "[OTHER REQUIRED ITEMS, e.g. transcript]"
+
+
+# ---------------------------------------------------------------------
+#  MEMBERSHIP (Membership page)
+# ---------------------------------------------------------------------
+membership:
+  meeting_time: "11:00 AM, first Saturday of each month"
+  season: "September through June"
+  # Where meetings are held, e.g. "Mostly the clubrooms, 123 Main Street"
+  meeting_place: "Mostly the clubrooms, [ADDRESS]"
+  # Who may join and any dues. A sentence or two is plenty.
+  how_to_join: "[HOW TO JOIN, e.g. who may join and any dues]"
+
+
+# ---------------------------------------------------------------------
+#  GIVING (Give page)
+# ---------------------------------------------------------------------
+giving:
+  # Who checks should be made out to
+  check_payee: "[PAYEE]"
+  # Tax note shown at the bottom of the Give page. Confirm the wording before publishing.
+  tax_note: "[TAX-DEDUCTIBILITY NOTE: club to confirm before publishing.]"
+
+
+# ---------------------------------------------------------------------
+#  EVENTS (Events page, and the scrolling ribbon on the home page)
+#  Exact dates are posted on Facebook, not here.
+# ---------------------------------------------------------------------
+events:
+  # The club's yearly events. One per line, each starting with - "..."
+  yearly:
+    - "Membership Tea"
+    - "Black History Month program"
+    - "Annual Lenten Tea"
+    - "Scholarship Dinner Dance"
+    - "Student Scholarship Awards"
+
+  # Other activities, as one sentence
+  other_activities: "Educational workshops, cultural programs, group trips, youth mentoring and community service."

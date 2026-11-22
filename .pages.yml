@@ -1,0 +1,58 @@
+# Pages CMS configuration (https://pagescms.org): a free, form-based editor for this site.
+# Staff sign in at https://app.pagescms.org with their GitHub account, pick this repository,
+# and get simple forms for everything in _data/club.yml, plus a place to upload the application PDF.
+# Editing _data/club.yml directly on GitHub works just as well; this is optional.
+
+media:
+  input: files
+  output: files
+
+content:
+  - name: club
+    label: Website settings
+    type: file
+    path: _data/club.yml
+    fields:
+      - name: contact
+        label: Contact details
+        type: object
+        fields:
+          - { name: email, label: Email address, type: string, required: true }
+          - { name: mailing_address, label: Mailing address, type: string, description: "Street address or P.O. box only. The city is added after it." }
+          - { name: city, label: City and state, type: string }
+          - { name: facebook_url, label: Facebook page link, type: string, description: "Full link starting with https://. Leave empty to hide Facebook links." }
+
+      - name: scholarships
+        label: Scholarships (update once a year)
+        type: object
+        fields:
+          - { name: award_amount, label: Award amount, type: string, description: 'For example: "$1,000 each"' }
+          - { name: eligibility, label: Who can apply, type: string }
+          - { name: deadline, label: Deadline (as visitors read it), type: string, description: 'For example: "Friday, April 16, 2027"' }
+          - { name: deadline_date, label: Deadline date for the countdown, type: date, description: "Optional. Shows a live days-left countdown. Leave empty for none.", options: { format: "yyyy-MM-dd" } }
+          - { name: awards_per_year, label: Scholarships given each year (about), type: number }
+          - { name: application_pdf, label: Application form (PDF), type: file, description: "Upload the PDF. While empty, the download buttons ask people to email the club." }
+          - { name: checklist, label: What to include (checklist), type: string, list: true }
+
+      - name: membership
+        label: Membership
+        type: object
+        fields:
+          - { name: meeting_time, label: Meeting time, type: string }
+          - { name: season, label: Meeting season, type: string }
+          - { name: meeting_place, label: Meeting place, type: string }
+          - { name: how_to_join, label: How to join, type: text }
+
+      - name: giving
+        label: Giving
+        type: object
+        fields:
+          - { name: check_payee, label: Make checks payable to, type: string }
+          - { name: tax_note, label: Tax-deductibility note, type: text }
+
+      - name: events
+        label: Events
+        type: object
+        fields:
+          - { name: yearly, label: Yearly events, type: string, list: true, description: "Shown on the Events page and in the scrolling ribbon on the home page." }
+          - { name: other_activities, label: Other activities, type: text }

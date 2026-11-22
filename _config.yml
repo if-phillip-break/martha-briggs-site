@@ -1,0 +1,11 @@
+# Site configuration for GitHub Pages (Jekyll).
+# Staff: you should not need to change this file. Everyday edits go in _data/club.yml.
+title: The Martha Briggs Educational Club, Inc.
+description: Proudly supporting educational achievements of young women and men since 1920.
+
+# Files kept in the repository but not published on the website.
+exclude:
+  - README.md
+  - EDITING-GUIDE.md
+  - .pages.yml
+  - files/README.txt

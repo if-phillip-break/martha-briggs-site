@@ -1,0 +1,62 @@
+---
+layout: default
+title: "Give — Martha Briggs Educational Club"
+description: "Support the Martha Briggs Educational Club scholarship fund for local students."
+nav: give
+---
+{% comment %}
+  Page content only. The header, menu and footer come from _includes/.
+  Everyday details (addresses, deadlines, lists) come from _data/club.yml, shown below as club.something.
+  Any other wording can be edited right here, between the tags.
+{% endcomment %}
+{% assign club = site.data.club %}
+  <main id="main">
+    <section class="band sp-m" style="background: #4F246E; color: #F7F2E9; padding-top: 104px; padding-bottom: 104px; position: relative; overflow: hidden">
+      <svg class="mx-fig mx-book mx-givefig" viewBox="0 0 200 160" aria-hidden="true" fill="none" stroke="#D4B062" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <g>
+          <path class="mx-draw mx-ray" pathLength="1" style="--d: .3s" d="M100 44 V16"></path>
+          <path class="mx-draw mx-ray" pathLength="1" style="--d: .4s" d="M85.8 46.3 L77.1 19.6"></path>
+          <path class="mx-draw mx-ray" pathLength="1" style="--d: .4s" d="M114.2 46.3 L122.9 19.6"></path>
+          <path class="mx-draw mx-ray" pathLength="1" style="--d: .5s" d="M73 52.8 L56.5 30.1"></path>
+          <path class="mx-draw mx-ray" pathLength="1" style="--d: .5s" d="M127 52.8 L143.5 30.1"></path>
+          <path class="mx-draw mx-ray" pathLength="1" style="--d: .6s" d="M62.8 63 L40.1 46.5"></path>
+          <path class="mx-draw mx-ray" pathLength="1" style="--d: .6s" d="M137.2 63 L159.9 46.5"></path>
+        </g>
+        <path class="mx-draw" pathLength="1" style="--d: .1s" d="M100 82 C82 72 56 70 30 76 V134 C56 128 82 130 100 140 Z"></path>
+        <path class="mx-draw" pathLength="1" style="--d: .1s" d="M100 82 C118 72 144 70 170 76 V134 C144 128 118 130 100 140 Z"></path>
+        <path class="mx-draw" pathLength="1" style="--d: .9s" d="M42 92 C60 88 76 89 90 95 M42 104 C60 100 76 101 90 107 M42 116 C60 112 76 113 90 119"></path>
+        <path class="mx-draw" pathLength="1" style="--d: .9s" d="M158 92 C140 88 124 89 110 95 M158 104 C140 100 124 101 110 107 M158 116 C140 112 124 113 110 119"></path>
+        <path class="mx-flip" d="M100 82 C118 72 144 70 170 76 V134 C144 128 118 130 100 140 Z" fill="#4F246E"></path>
+        <path d="M100 82 V140"></path>
+      </svg>
+      <div class="wrap" style="display: flex; flex-direction: column; gap: 24px; position: relative">
+        <p class="pg-1" style="margin: 0; font-size: 14px; font-weight: 600; color: #D4B062">Give</p>
+        <h1 class="pg-2" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(44px, 7vw, 104px); line-height: 1.02; letter-spacing: -0.01em; max-width: 1000px">Support the scholarship fund</h1>
+        <span class="pg-rule" aria-hidden="true" style="display: block; width: 96px; height: 1px; background: #D4B062"></span>
+        <p class="pg-3" style="margin: 0; max-width: 600px; font-size: 20px">Every gift goes to scholarships for local students.</p>
+      </div>
+    </section>
+
+    <section class="sp-m reveal" style="padding-top: 88px; padding-bottom: 80px">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px">
+        <div data-tilt style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #1F1A17; padding-top: 20px">
+          <h2 class="h3" style="margin: 0; font-family: 'Libre Caslon Text', serif; font-weight: 400; line-height: 1.25">By check</h2>
+          <p style="margin: 0">Payable to {{ club.giving.check_payee }}, mailed to {{ club.contact.mailing_address }}.</p>
+        </div>
+        <div data-tilt style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #1F1A17; padding-top: 20px">
+          <h2 class="h3" style="margin: 0; font-family: 'Libre Caslon Text', serif; font-weight: 400; line-height: 1.25">Sponsor a scholarship</h2>
+          <p style="margin: 0">Email <a href="mailto:{{ club.contact.email }}">{{ club.contact.email }}</a> to talk with us.</p>
+        </div>
+        <div data-tilt style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #1F1A17; padding-top: 20px">
+          <h2 class="h3" style="margin: 0; font-family: 'Libre Caslon Text', serif; font-weight: 400; line-height: 1.25">Scholarship Dinner Dance</h2>
+          <p style="margin: 0">Our yearly fundraiser. The date is posted on our {% include facebook-link.html text="Facebook page" %}.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-m" style="padding-top: 0; padding-bottom: 96px">
+      <div class="wrap">
+        <p style="margin: 0; font-size: 15px; color: #5E554D; border-top: 1px solid #D9CDB8; padding-top: 16px">{{ club.giving.tax_note }}</p>
+      </div>
+    </section>
+  </main>

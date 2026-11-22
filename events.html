@@ -1,0 +1,46 @@
+---
+layout: default
+title: "Events — Martha Briggs Educational Club"
+description: "Meetings, teas, the Scholarship Dinner Dance and other yearly events of the Martha Briggs Educational Club."
+nav: events
+---
+{% comment %}
+  Page content only. The header, menu and footer come from _includes/.
+  Everyday details (addresses, deadlines, lists) come from _data/club.yml, shown below as club.something.
+  Any other wording can be edited right here, between the tags.
+{% endcomment %}
+{% assign club = site.data.club %}
+  <main id="main">
+    <section style="padding-top: 72px; padding-bottom: 96px">
+      <div class="wrap" style="display: flex; flex-direction: column; gap: 40px; max-width: 960px">
+        <div class="mx-hrow">
+          <h1 class="h1 pg-in" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; line-height: 1.05; color: #4F246E">Events</h1>
+          <svg class="mx-fig mx-cup" width="128" height="112" viewBox="0 0 128 112" aria-hidden="true" fill="none" stroke="#4F246E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <g class="mx-steam" stroke="#B8892B"><path d="M44 36 C38 28 50 22 44 12"></path><path d="M60 34 C54 26 66 20 60 8"></path><path d="M76 36 C70 28 82 22 76 12"></path></g>
+            <path class="mx-draw" pathLength="1" d="M24 46 H96 V62 C96 82 82 94 60 94 C38 94 24 82 24 62 Z"></path>
+            <path class="mx-draw" pathLength="1" style="--d: .6s" d="M96 52 C112 52 114 74 94 76"></path>
+            <path class="mx-draw" pathLength="1" style="--d: .9s" d="M12 100 C30 106 90 106 108 100"></path>
+            <path class="mx-draw" pathLength="1" style="--d: 1.1s" d="M40 64 C48 60 52 70 60 66 C68 62 72 72 80 68" stroke="#B8892B"></path>
+          </svg>
+        </div>
+        <dl style="margin: 0; border-bottom: 1px solid #D9CDB8">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0; border-top: 1px solid #1F1A17">
+            <dt style="font-weight: 600; font-size: 17px">Monthly meetings</dt>
+            <dd style="margin: 0; font-size: 19px">Members meet monthly, {{ club.membership.season }}. <a href="membership.html">Meeting details</a></dd>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0; border-top: 1px solid #D9CDB8">
+            <dt style="font-weight: 600; font-size: 17px">Each year</dt>
+            <dd style="margin: 0; font-size: 19px">{{ club.events.yearly | join: "<br>" }}</dd>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0; border-top: 1px solid #D9CDB8">
+            <dt style="font-weight: 600; font-size: 17px">Also</dt>
+            <dd style="margin: 0; font-size: 19px">{{ club.events.other_activities }}</dd>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0; border-top: 1px solid #D9CDB8">
+            <dt style="font-weight: 600; font-size: 17px">Dates</dt>
+            <dd style="margin: 0; font-size: 19px">Posted on our {% include facebook-link.html text="Facebook page" %}.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>

@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Contact — Martha Briggs Educational Club"
+description: "Contact the Martha Briggs Educational Club by email, mail or Facebook."
+nav: contact
+---
+{% comment %}
+  Page content only. The header, menu and footer come from _includes/.
+  Everyday details (addresses, deadlines, lists) come from _data/club.yml, shown below as club.something.
+  Any other wording can be edited right here, between the tags.
+{% endcomment %}
+{% assign club = site.data.club %}
+  <main id="main">
+    <section style="padding-top: 72px; padding-bottom: 104px">
+      <div class="wrap" style="display: flex; flex-direction: column; gap: 40px; max-width: 960px">
+        <div class="mx-hrow">
+          <h1 class="h1 pg-in" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; line-height: 1.05; color: #4F246E">Contact</h1>
+          <svg class="mx-env" width="128" height="112" viewBox="-8 -36 136 140" aria-hidden="true" fill="none" stroke="#4F246E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="overflow: visible">
+            <path d="M0 30 H120 V96 H0 Z" fill="#E3D7C1"></path>
+            <path class="mx-flap" d="M0 30 L60 74 L120 30 Z" fill="#EDE4D3"></path>
+            <g class="mx-letter"><rect x="14" y="36" width="92" height="56" rx="1" fill="#FFFDF8" stroke="#B8892B"></rect><path d="M26 50 H82 M26 62 H94 M26 74 H70" stroke="#B8892B"></path></g>
+            <path d="M0 30 L60 70 L120 30 V96 H0 Z" fill="#F7F2E9"></path>
+            <path d="M0 96 L46 60 M120 96 L74 60"></path>
+          </svg>
+        </div>
+        <dl style="margin: 0; border-bottom: 1px solid #D9CDB8">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0; border-top: 1px solid #1F1A17">
+            <dt style="font-weight: 600; font-size: 17px">Email</dt>
+            <dd style="margin: 0; font-size: 19px"><a href="mailto:{{ club.contact.email }}" style="overflow-wrap: anywhere">{{ club.contact.email }}</a><button type="button" class="mx-copy" data-copy="{{ club.contact.email }}" aria-label="Copy email address"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1"></rect><path d="M5 15V5a1 1 0 0 1 1-1h10"></path></svg><span aria-live="polite">Copy</span></button><br><span style="font-size: 16px; color: #5E554D">Scholarship applications and general inquiries</span></dd>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0; border-top: 1px solid #D9CDB8">
+            <dt style="font-weight: 600; font-size: 17px">Mail</dt>
+            <dd style="margin: 0; font-size: 19px">{{ club.contact.mailing_address }}<br>{{ club.contact.city }}</dd>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0; border-top: 1px solid #D9CDB8">
+            <dt style="font-weight: 600; font-size: 17px">Facebook</dt>
+            <dd style="margin: 0; font-size: 19px">{% include facebook-link.html text="Martha Briggs Educational Club" %}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>

@@ -1,0 +1,211 @@
+/* =====================================================================
+   Motion layer — animations, figures and interactive pieces.
+   Everything that moves is switched off for visitors who ask their
+   device for reduced motion.
+   ===================================================================== */
+:root{
+  --mx-plum:#4F246E;--mx-plum-d:#3A1A51;--mx-gold:#B8892B;--mx-gold-l:#D4B062;
+  --mx-cream:#F7F2E9;--mx-sand:#EDE4D3;--mx-line:#D9CDB8;--mx-ink:#1F1A17;--mx-muted:#5E554D;
+  --mx-ease:cubic-bezier(.16,.8,.2,1);
+}
+
+/* ---------- Scroll progress ---------- */
+.mx-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:70;background:var(--mx-gold);transform-origin:left;transform:scaleX(0);pointer-events:none}
+
+/* ---------- Sticky header that hides on the way down ---------- */
+header.hdr-in{position:sticky;top:0;z-index:40;background:rgba(247,242,233,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:transform .45s var(--mx-ease),box-shadow .3s ease}
+header.hdr-in.mx-scrolled{box-shadow:0 8px 28px -16px rgba(31,26,23,.35)}
+header.hdr-in.mx-hide{transform:translateY(-100%)}
+header.hdr-in a img{transition:transform .6s var(--mx-ease)}
+header.hdr-in a:hover img{transform:rotate(-12deg) scale(1.06)}
+.navlinks a:not([style*="background"]){background:linear-gradient(currentColor,currentColor) left calc(100% - 2px)/0 1px no-repeat;padding:6px 0;transition:background-size .35s var(--mx-ease),color .2s}
+.navlinks a:not([style*="background"]):not([aria-current]):hover{background-size:100% 1px;color:var(--mx-plum) !important}
+
+/* ---------- Buttons: shine sweep + lift ---------- */
+.mx-btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .3s var(--mx-ease),box-shadow .3s var(--mx-ease),translate .25s var(--mx-ease)}
+.mx-btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s var(--mx-ease)}
+.mx-btn:hover::after{transform:translateX(120%)}
+.mx-btn:hover{box-shadow:0 14px 28px -14px rgba(79,36,110,.7)}
+
+/* ---------- Scroll reveal (only applied by JS to content below the fold) ---------- */
+.mx-rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--mx-ease) var(--d,0s),transform .9s var(--mx-ease) var(--d,0s)}
+.mx-rv.mx-in{opacity:1;transform:none}
+
+/* ---------- Tilt cards ---------- */
+[data-tilt]{transform-style:preserve-3d;will-change:transform}
+
+/* ---------- Counters ---------- */
+[data-count]{font-variant-numeric:tabular-nums}
+
+/* ---------- Phone menu: links cascade in ---------- */
+#site-menu:not([hidden]){animation:mxFade .3s ease both}
+#site-menu:not([hidden]) nav a{animation:mxSlide .6s var(--mx-ease) both}
+#site-menu nav a:nth-child(1){animation-delay:.05s}#site-menu nav a:nth-child(2){animation-delay:.1s}
+#site-menu nav a:nth-child(3){animation-delay:.15s}#site-menu nav a:nth-child(4){animation-delay:.2s}
+#site-menu nav a:nth-child(5){animation-delay:.25s}#site-menu nav a:nth-child(6){animation-delay:.3s}
+#site-menu nav a:nth-child(7){animation-delay:.35s}#site-menu nav a:nth-child(8){animation-delay:.4s}
+
+/* ---------- Home: seal with turning ring and gold dust ---------- */
+.mx-motes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.mx-sealwrap{position:relative;width:min(54vh,70vw);max-width:560px;aspect-ratio:1;transition:transform .5s var(--mx-ease)}
+.mx-sealwrap .seal{width:100% !important;height:auto;position:relative;z-index:1;filter:drop-shadow(0 20px 40px rgba(20,8,30,.35))}
+.mx-ring{position:absolute;inset:-12%;width:124%;height:124%;animation:mxSpin 60s linear infinite;pointer-events:none}
+.mx-ring text{fill:var(--mx-gold-l);font-family:'Public Sans',sans-serif;font-weight:600;font-size:6.4px;letter-spacing:.5px}
+.mx-glow{position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle,rgba(212,176,98,.22),rgba(212,176,98,0) 65%);animation:mxBreathe 6s ease-in-out infinite;pointer-events:none}
+
+/* ---------- Home: numbers band ---------- */
+.mx-stat{display:flex;flex-direction:column;gap:14px;border-top:1px solid rgba(212,176,98,.45);padding-top:20px}
+.mx-statn{font-family:'Libre Caslon Display',serif;font-size:clamp(64px,7vw,104px);line-height:.9;color:var(--mx-gold-l)}
+.mx-statl{font-size:16px;line-height:1.5;color:#EDE4D3;max-width:280px}
+
+/* ---------- Home: events ribbon ---------- */
+.mx-marquee{overflow:hidden}
+.mx-mtrack{display:flex;width:max-content;animation:mxMarq 46s linear infinite}
+.mx-marquee:hover .mx-mtrack,.mx-marquee:focus-within .mx-mtrack{animation-play-state:paused}
+.mx-mtrack ul{display:flex;align-items:center;list-style:none;margin:0;padding:0}
+.mx-mtrack li{display:flex;align-items:center;gap:56px;padding-right:56px;font-family:'Libre Caslon Display',serif;font-size:clamp(28px,3.4vw,44px);line-height:1.2;color:var(--mx-plum);white-space:nowrap}
+.mx-mtrack li::after{content:"";width:9px;height:9px;background:var(--mx-gold);transform:rotate(45deg);flex:0 0 auto}
+
+/* ---------- Martha Briggs: journey figure ---------- */
+.mx-jscroll{overflow-x:auto;overscroll-behavior-x:contain;margin:0 -20px;padding:0 20px}
+.mx-jtrack{position:relative;height:300px;min-width:760px}
+.mx-jtrack svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.mx-jbase{fill:none;stroke:#C9BBA2;stroke-width:1.5;stroke-dasharray:2 7;vector-effect:non-scaling-stroke}
+.mx-jline{fill:none;stroke:var(--mx-gold);stroke-width:2.5;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.mx-traveler{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--mx-gold);box-shadow:0 0 0 6px rgba(184,137,43,.2),0 0 22px rgba(184,137,43,.7);pointer-events:none;opacity:0;transition:opacity .4s}
+.mx-traveler.mx-on{opacity:1}
+.mx-stop{position:absolute;width:48px;height:48px;margin:-24px 0 0 -24px;padding:0;border:0;background:none;cursor:pointer;color:var(--mx-ink);font:inherit}
+.mx-stop .dot{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;border:1.5px solid var(--mx-plum);background:var(--mx-cream);box-sizing:border-box;transition:transform .4s var(--mx-ease),background .3s,box-shadow .3s}
+.mx-stop.mx-lit .dot{background:var(--mx-gold);border-color:var(--mx-gold)}
+.mx-stop[aria-pressed="true"] .dot{background:var(--mx-plum);border-color:var(--mx-plum);transform:scale(1.25);box-shadow:0 0 0 7px rgba(79,36,110,.15)}
+.mx-stop:hover .dot{transform:scale(1.25)}
+.mx-stop .lbl{position:absolute;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;white-space:nowrap;line-height:1.25;pointer-events:none}
+.mx-stop .lbl b{font-family:'Libre Caslon Text',serif;font-weight:400;font-size:18px;transition:color .2s}
+.mx-stop .lbl small{font-size:13px;color:var(--mx-muted)}
+.mx-stop.up .lbl{bottom:100%;flex-direction:column-reverse}
+.mx-stop.down .lbl{top:100%}
+.mx-stop[aria-pressed="true"] .lbl b{color:var(--mx-plum);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.mx-jdetail{min-height:150px;border-top:1px solid var(--mx-ink);padding-top:20px;margin-top:12px}
+.mx-jpanel h3{margin:0 0 4px;font-family:'Libre Caslon Display',serif;font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.1;color:var(--mx-plum)}
+.mx-jpanel .yrs{margin:0 0 10px;font-size:15px;font-weight:600;color:#7A5C1A}
+.mx-jpanel p{margin:0;max-width:720px}
+.js .mx-jpanel{display:none}
+.js .mx-jpanel.mx-act{display:block;animation:mxRise .6s var(--mx-ease) both}
+.mx-jpanel+.mx-jpanel{margin-top:24px}
+.js .mx-jpanel+.mx-jpanel{margin-top:0}
+
+/* ---------- Martha Briggs: timeline line + dots ---------- */
+.mx-tl{position:relative}
+.mx-tl::before,.mx-tl::after{content:"";position:absolute;left:6px;top:0;width:1px;background:var(--mx-line)}
+.mx-tl::before{bottom:0}
+.mx-tl::after{height:100%;width:2px;left:5.5px;background:var(--mx-gold);transform-origin:top;transform:scaleY(var(--tl,0))}
+.mx-tl>li{position:relative;padding-left:36px !important}
+.mx-tl>li::before{content:"";position:absolute;left:1px;top:29px;width:11px;height:11px;border-radius:50%;background:var(--mx-cream);border:1.5px solid var(--mx-gold);box-sizing:border-box;z-index:1;transform:scale(.5);transition:transform .5s var(--mx-ease),background .4s,box-shadow .4s}
+.mx-tl>li.mx-on::before{transform:scale(1);background:var(--mx-gold);box-shadow:0 0 0 6px rgba(184,137,43,.16)}
+
+/* ---------- Line-drawn figures ---------- */
+.mx-fig{display:block;overflow:visible}
+.mx-draw{stroke-dasharray:1;stroke-dashoffset:1}
+.mx-figs-on .mx-draw{animation:mxDraw 1.8s var(--mx-ease) var(--d,.15s) forwards}
+
+/* Mortarboard */
+.mx-cap .mx-tassel{transform-origin:96px 40px}
+.mx-figs-on.mx-cap .mx-tassel{animation:mxSwing 3.2s ease-in-out 1.6s infinite}
+.mx-cap{transition:transform .2s}
+.mx-cap.mx-toss{animation:mxToss 1s var(--mx-ease)}
+
+/* Book with turning page */
+.mx-book .mx-flip{transform-origin:100px 0;opacity:0}
+.mx-givefig{position:absolute;right:4vw;top:50%;width:min(30vw,420px);transform:translateY(-50%);opacity:.75;pointer-events:none}
+@media (min-width:1100px){.mx-givefig~.wrap h1{max-width:780px !important}}
+@media (max-width:1099px){.mx-givefig{display:none}}
+.mx-figs-on.mx-book .mx-flip{animation:mxFlip 7s ease-in-out 2s infinite}
+.mx-figs-on.mx-book .mx-ray{animation:mxDraw 1.2s var(--mx-ease) var(--d) forwards,mxPulse 4s ease-in-out calc(var(--d) + 1.4s) infinite}
+
+/* Teacup steam */
+.mx-steam path{opacity:0}
+.mx-figs-on .mx-steam path{animation:mxSteam 3.6s ease-in-out infinite}
+.mx-steam path:nth-child(2){animation-delay:1.2s !important}
+.mx-steam path:nth-child(3){animation-delay:2.4s !important}
+
+/* Envelope */
+.mx-env{display:block;cursor:default}
+.mx-env .mx-flap{transform-box:fill-box;transform-origin:top;transition:transform .7s var(--mx-ease)}
+.mx-env .mx-letter{opacity:0;transition:transform .9s var(--mx-ease) .25s,opacity .3s ease .2s}
+.mx-env.mx-open .mx-flap{transform:scaleY(-1)}
+.mx-env.mx-open .mx-letter{opacity:1;transform:translateY(-38px)}
+@media (max-width:599px){.mx-hrow .mx-env{width:84px;height:auto}}
+
+/* Heading row with figure */
+.mx-hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+@media (max-width:599px){.mx-hrow .mx-fig{width:84px;height:auto}}
+
+/* ---------- Apply: inked step numbers + drawn rule ---------- */
+.mx-step{position:relative}
+.mx-step:nth-child(2){--d:.3s}.mx-step:nth-child(3){--d:.6s}
+.mx-step::after{content:"";position:absolute;left:0;top:-1px;width:100%;height:2px;background:var(--mx-gold);transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--mx-ease) var(--d,0s)}
+.mx-step.mx-in::after{transform:scaleX(1)}
+.mx-step:hover .mx-num{transform:translateY(-4px) rotate(-3deg)}
+.mx-num{display:inline-block;transition:transform .5s var(--mx-ease)}
+
+/* ---------- About: portrait link ---------- */
+.mx-zoom img{transition:transform .8s var(--mx-ease),filter .8s}
+.mx-zoom:hover img{transform:scale(1.06) rotate(-1.5deg);filter:drop-shadow(0 16px 24px rgba(31,26,23,.25))}
+
+/* ---------- Scholarships: countdown ---------- */
+.mx-countdown{display:inline-flex;align-items:center;gap:8px;margin-left:12px;font-size:15px;font-weight:600;color:var(--mx-plum)}
+.mx-countdown[hidden]{display:none}
+.mx-countdown::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mx-gold);animation:mxBlink 1.6s ease-in-out infinite}
+
+/* ---------- Membership: next meeting calendar ---------- */
+.mx-cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;max-width:360px;font-size:14px;text-align:center}
+.mx-cal .h{font-weight:600;color:var(--mx-muted);font-size:12px;padding-bottom:4px}
+.mx-cal .d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:50%;position:relative;color:var(--mx-ink)}
+.mx-cal .d.past{color:#A39888}
+.mx-cal .d.meet{color:var(--mx-cream);font-weight:600}
+.mx-cal .d.meet::before{content:"";position:absolute;inset:6%;border-radius:50%;background:var(--mx-plum);z-index:-1;transform:scale(0);transition:transform .7s var(--mx-ease) .5s}
+.mx-cal .d.meet::after{content:"";position:absolute;inset:-6%;border-radius:50%;border:1.5px solid var(--mx-gold);opacity:0}
+.mx-in .mx-cal .d.meet::before,.mx-cal.mx-in .d.meet::before{transform:scale(1)}
+.mx-cal.mx-in .d.meet::after{animation:mxPing 2.4s ease-out 1.2s infinite}
+.mx-cal .d{isolation:isolate}
+.mx-copy{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-left:8px;padding:0 14px;border:1px solid var(--mx-muted);border-radius:2px;background:transparent;color:var(--mx-ink);font:600 15px 'Public Sans',sans-serif;cursor:pointer;vertical-align:middle;transition:background .2s,color .2s,border-color .2s}
+.mx-copy:hover{border-color:var(--mx-plum);color:var(--mx-plum)}
+.mx-copy.mx-done{background:var(--mx-plum);border-color:var(--mx-plum);color:var(--mx-cream)}
+
+/* ---------- Keyframes ---------- */
+@keyframes mxFade{from{opacity:0}to{opacity:1}}
+@keyframes mxSlide{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes mxRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes mxSpin{to{transform:rotate(360deg)}}
+@keyframes mxBreathe{0%,100%{opacity:.55;transform:scale(.96)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes mxMarq{to{transform:translateX(-50%)}}
+@keyframes mxDraw{to{stroke-dashoffset:0}}
+@keyframes mxSwing{0%,100%{transform:rotate(0)}30%{transform:rotate(9deg)}70%{transform:rotate(-6deg)}}
+@keyframes mxToss{0%{transform:none}40%{transform:translateY(-36px) rotate(-14deg)}70%{transform:translateY(4px) rotate(4deg)}100%{transform:none}}
+@keyframes mxFlip{0%,20%{transform:scaleX(1);opacity:0}26%{transform:scaleX(1);opacity:1}54%,74%{transform:scaleX(-1);opacity:1}82%,100%{transform:scaleX(-1);opacity:0}}
+@keyframes mxPulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes mxSteam{0%{opacity:0;transform:translateY(8px)}30%{opacity:.9}100%{opacity:0;transform:translateY(-18px)}}
+@keyframes mxBlink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes mxPing{0%{opacity:.9;transform:scale(.9)}100%{opacity:0;transform:scale(1.5)}}
+@keyframes mxInk{from{color:transparent;-webkit-text-stroke:1px var(--mx-plum)}60%{color:transparent;-webkit-text-stroke:1px var(--mx-plum)}to{color:var(--mx-plum);-webkit-text-stroke:0 transparent}}
+.mx-step.mx-in .mx-num{animation:mxInk 1.8s ease-out calc(var(--d,0s) + .2s) both}
+
+/* ---------- Reduced motion: everything holds still, nothing is hidden ---------- */
+@media (prefers-reduced-motion: reduce){
+  .mx-rv{opacity:1;transform:none;transition:none}
+  .mx-ring,.mx-glow,.mx-mtrack,.mx-countdown::before,
+  #site-menu:not([hidden]),#site-menu:not([hidden]) nav a,
+  .mx-figs-on .mx-draw,.mx-figs-on.mx-cap .mx-tassel,.mx-figs-on.mx-book .mx-flip,.mx-figs-on.mx-book .mx-ray,
+  .mx-figs-on .mx-steam path,.mx-step.mx-in .mx-num,.mx-cal.mx-in .d.meet::after,.js .mx-jpanel.mx-act{animation:none}
+  .mx-draw{stroke-dashoffset:0}
+  .mx-steam path{opacity:.7}
+  .mx-mtrack{flex-wrap:wrap;width:auto;justify-content:center}
+  .mx-mtrack ul[aria-hidden]{display:none}
+  .mx-mtrack ul{flex-wrap:wrap;justify-content:center;row-gap:8px}
+  .mx-tl::after{transform:none}
+  .mx-tl>li::before{transform:scale(1);background:var(--mx-gold)}
+  .mx-step::after{transition:none}
+  .mx-cal .d.meet::before{transform:scale(1);transition:none}
+  header.hdr-in,.mx-btn,.mx-btn::after,.mx-zoom img,.mx-env .mx-flap,.mx-env .mx-letter{transition:none}
+  .mx-zoom:hover img{transform:none}
+}

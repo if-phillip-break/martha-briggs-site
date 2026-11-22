@@ -1,0 +1,33 @@
+{% comment %}
+  Footer shared by every page. The address, email and Facebook link come from _data/club.yml.
+  The copyright year updates by itself.
+{% endcomment %}
+{% assign c = site.data.club.contact %}
+  <footer style="border-top: 1px solid #D9CDB8; padding-top: 48px; padding-bottom: 40px">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-start">
+        <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 4px">
+          <p style="margin: 0; font-family: 'Libre Caslon Text', serif; font-size: 22px; line-height: 1.3">The Martha Briggs Educational Club, Inc.</p>
+          <p style="margin: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 16px; color: #5E554D"><img src="images/ncnw-logo.png" alt="NCNW" style="height: 22px; width: auto; display: block">Proud affiliate of the National Council of Negro Women</p>
+          <p style="margin: 0; font-size: 16px; color: #5E554D">{{ c.mailing_address }}, {{ c.city }}</p>
+        </div>
+        <div style="flex: 1 1 240px; display: flex; flex-direction: column">
+          <a href="mailto:{{ c.email }}" style="font-size: 17px; min-height: 48px; display: inline-flex; align-items: center; overflow-wrap: anywhere">{{ c.email }}</a>
+{%- if c.facebook_url != "" and c.facebook_url %}
+          <a href="{{ c.facebook_url }}" style="font-size: 17px; min-height: 48px; display: inline-flex; align-items: center">Facebook</a>
+{%- endif %}
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px; border-top: 1px solid #D9CDB8; padding-top: 12px">
+        <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 0 24px; font-size: 16px">
+          <a href="apply.html" style="min-height: 48px; display: inline-flex; align-items: center">Apply</a>
+          <a href="scholarships.html" style="min-height: 48px; display: inline-flex; align-items: center">Scholarships</a>
+          <a href="about.html" style="min-height: 48px; display: inline-flex; align-items: center">About</a>
+          <a href="events.html" style="min-height: 48px; display: inline-flex; align-items: center">Events</a>
+          <a href="give.html" style="min-height: 48px; display: inline-flex; align-items: center">Give</a>
+          <a href="contact.html" style="min-height: 48px; display: inline-flex; align-items: center">Contact</a>
+        </nav>
+        <p style="margin: 0; font-size: 14px; color: #5E554D">© {{ site.time | date: "%Y" }} The Martha Briggs Educational Club, Inc.</p>
+      </div>
+    </div>
+  </footer>

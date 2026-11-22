@@ -1,0 +1,2 @@
+{% comment %}Facebook link, or plain text while no Facebook address is set in _data/club.yml.
+Usage: include facebook-link.html text="Facebook page"{% endcomment %}{% assign fb = site.data.club.contact.facebook_url %}{% if fb and fb != "" %}<a href="{{ fb }}">{{ include.text }}</a>{% else %}{{ include.text }}{% endif %}

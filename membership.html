@@ -1,0 +1,49 @@
+---
+layout: default
+title: "Membership — Martha Briggs Educational Club"
+description: "Join the Martha Briggs Educational Club in New Bedford, Massachusetts."
+---
+{% comment %}
+  Page content only. The header, menu and footer come from _includes/.
+  Everyday details (addresses, deadlines, lists) come from _data/club.yml, shown below as club.something.
+  Any other wording can be edited right here, between the tags.
+{% endcomment %}
+{% assign club = site.data.club %}
+  <main id="main">
+    <section class="sp-m" style="padding-top: 88px; padding-bottom: 88px">
+      <div class="wrap g" style="align-items: end">
+        <div class="s7" style="display: flex; flex-direction: column; gap: 24px">
+          <h1 class="pg-2" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(56px, 8vw, 112px); line-height: 1; color: #4F246E">Membership</h1>
+          <span class="pg-rule" aria-hidden="true" style="display: block; width: 96px; height: 1px; background: #B8892B"></span>
+        </div>
+        <dl class="o1 pg-3" style="margin: 0; display: grid; grid-template-columns: 90px minmax(0, 1fr); font-size: 17px">
+          <dt style="padding: 12px 16px 12px 0; border-top: 1px solid #D9CDB8; font-weight: 600">When</dt><dd style="margin: 0; padding: 12px 0; border-top: 1px solid #D9CDB8">{{ club.membership.meeting_time }}</dd>
+          <dt style="padding: 12px 16px 12px 0; border-top: 1px solid #D9CDB8; font-weight: 600">Season</dt><dd style="margin: 0; padding: 12px 0; border-top: 1px solid #D9CDB8">{{ club.membership.season }}</dd>
+          <dt style="padding: 12px 16px 12px 0; border-top: 1px solid #D9CDB8; border-bottom: 1px solid #D9CDB8; font-weight: 600">Where</dt><dd style="margin: 0; padding: 12px 0; border-top: 1px solid #D9CDB8; border-bottom: 1px solid #D9CDB8">{{ club.membership.meeting_place }}</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Next meeting (filled in by js/motion.js; hidden without JavaScript) -->
+    <section class="sp-m mx-next" hidden aria-labelledby="mx-next-h" style="padding-top: 0; padding-bottom: 88px">
+      <div class="wrap g" style="align-items: center">
+        <div class="s6" style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #1F1A17; padding-top: 20px">
+          <h2 id="mx-next-h" style="margin: 0; font-size: 14px; font-weight: 600; color: #7A5C1A">Next meeting</h2>
+          <p class="mx-nextdate" style="margin: 0; font-family: 'Libre Caslon Text', serif; font-size: clamp(26px, 3vw, 36px); line-height: 1.25; color: #4F246E"></p>
+          <p style="margin: 0; font-size: 16px; color: #5E554D">Worked out from the usual schedule. Check the <a href="events.html">Events page</a> for any changes.</p>
+        </div>
+        <div class="o1" data-tilt style="display: flex; flex-direction: column; gap: 12px; background: #FFFDF8; border: 1px solid #D9CDB8; padding: 24px; box-shadow: 0 18px 40px -28px rgba(31,26,23,.45)" aria-hidden="true">
+          <p class="mx-calmonth" style="margin: 0; font-family: 'Libre Caslon Text', serif; font-size: 20px; text-align: center"></p>
+          <div class="mx-cal"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-m reveal" style="background: #EDE4D3; padding-top: 80px; padding-bottom: 88px">
+      <div class="wrap" style="display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+        <h2 class="h2" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; line-height: 1.1">Join us</h2>
+        <p style="margin: 0; max-width: 600px">{{ club.membership.how_to_join }}</p>
+        <a href="mailto:{{ club.contact.email }}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; box-sizing: border-box; padding: 14px 24px; background: #4F246E; color: #F7F2E9; text-decoration: none; border-radius: 2px; font-weight: 600; font-size: 17px; line-height: 1.2">Email about membership</a>
+      </div>
+    </section>
+  </main>

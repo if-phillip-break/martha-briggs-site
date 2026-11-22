@@ -1,0 +1,51 @@
+---
+layout: default
+title: "About — Martha Briggs Educational Club"
+description: "About the Martha Briggs Educational Club, one of New Bedford’s oldest organizations for women of color, founded 1920."
+nav: about
+---
+{% comment %}
+  Page content only. The header, menu and footer come from _includes/.
+  Everyday details (addresses, deadlines, lists) come from _data/club.yml, shown below as club.something.
+  Any other wording can be edited right here, between the tags.
+{% endcomment %}
+{% assign club = site.data.club %}
+  <main id="main">
+    <section class="sp-m" style="padding-top: 96px; padding-bottom: 80px">
+      <div class="wrap" style="display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+        <p class="pg-1" style="margin: 0; font-size: 14px; font-weight: 600; color: #7A5C1A">About the club</p>
+        <h1 class="pg-2" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(36px, 5.2vw, 72px); line-height: 1.08; color: #4F246E; max-width: 1000px">One of New Bedford’s oldest organizations for women of color</h1>
+        <span class="pg-rule-c" aria-hidden="true" style="display: block; width: 96px; height: 1px; background: #B8892B"></span>
+        <p class="pg-3" style="margin: 0; max-width: 640px">Our members are dedicated to education and community service. We support the educational achievements of young men and women, and serve as role models and mentors to generations of youth.</p>
+      </div>
+    </section>
+
+    <section class="sp-m reveal" style="padding-top: 24px; padding-bottom: 96px">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px 64px">
+        <div data-tilt style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #1F1A17; padding-top: 20px">
+          <span style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(72px, 9vw, 128px); line-height: 0.9; color: #4F246E" data-count="1920" data-from="1838">1920</span>
+          <p style="margin: 0; max-width: 460px">Founded by a group of women of color in New Bedford to create a student aid fund. The first president was Mrs. Jennie Wilder Lee.</p>
+        </div>
+        <div data-tilt style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #1F1A17; padding-top: 20px">
+          <span style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(72px, 9vw, 128px); line-height: 0.9; color: #4F246E" data-count="1939" data-from="1900">1939</span>
+          <p style="margin: 0; max-width: 460px">Incorporated in Massachusetts on November 20.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-m reveal" style="background: #EDE4D3; padding-top: 80px; padding-bottom: 80px">
+      <div class="wrap g" style="align-items: center">
+        <a href="martha-briggs.html" class="s6 mx-zoom" style="display: flex; gap: 24px; align-items: flex-end; text-decoration: none; color: #1F1A17">
+          <img src="images/martha-briggs-portrait.webp" alt="" style="height: 180px; width: auto; display: block">
+          <span style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 8px">
+            <span style="font-size: 14px; font-weight: 600; color: #7A5C1A">Named for</span>
+            <span style="font-family: 'Libre Caslon Text', serif; font-weight: 400; font-size: 28px; line-height: 1.2; color: #4F246E; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Martha Bailey Briggs, 1838–1889</span>
+          </span>
+        </a>
+        <div class="o1" style="display: flex; gap: 20px; align-items: center">
+          <img src="images/ncnw-logo.png" alt="National Council of Negro Women (NCNW) logo" style="height: 40px; width: auto; display: block; flex: 0 0 auto">
+          <p style="margin: 0; font-size: 17px">A proud affiliate of the <a href="https://ncnw.org/">National Council of Negro Women</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>

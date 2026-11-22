@@ -1,0 +1,98 @@
+---
+layout: default
+title: "Martha Briggs Educational Club — Home"
+description: "The Martha Briggs Educational Club, Inc. of New Bedford, Massachusetts has supported the educational achievements of young women and men since 1920."
+---
+{% comment %}
+  Page content only. The header, menu and footer come from _includes/.
+  Everyday details (addresses, deadlines, lists) come from _data/club.yml, shown below as club.something.
+  Any other wording can be edited right here, between the tags.
+{% endcomment %}
+{% assign club = site.data.club %}
+  <main id="main" class="stack">
+    <!-- 1 · Portrait -->
+    <section class="panel p1" aria-label="Martha Bailey Briggs" style="position: sticky; top: 0; height: var(--ph); overflow: hidden; background: #F7F2E9; z-index: 1">
+      <div class="p1-in" style="position: absolute; inset: 0">
+        <h1 aria-label="Martha Bailey Briggs" style="margin: 0; position: absolute; inset: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; color: #4F246E; line-height: 0.85; letter-spacing: -0.02em">
+          <span class="p1-l" style="position: absolute; left: 4vw; top: 6%; display: block"><span class="w1 hero-word" style="display: block">Martha</span></span>
+          <span class="p1-r" style="position: absolute; right: 4vw; bottom: 16%; display: block"><span class="w2 hero-word" style="display: block">Briggs</span></span>
+        </h1>
+        <div style="position: absolute; left: 50%; bottom: 0; height: 90%; transform: translateX(-50%); display: flex; align-items: flex-end">
+          <img class="por" src="images/martha-briggs-portrait.webp" alt="Martha Bailey Briggs, photographed in the 19th century" style="height: 100%; width: auto; display: block">
+        </div>
+        <div class="fade-late" style="position: absolute; left: 4vw; bottom: 28px; display: flex; flex-direction: column; gap: 2px">
+          <span style="font-family: 'Libre Caslon Display', serif; font-size: 28px; line-height: 1.1; color: #1F1A17">1838–1889</span>
+          <span style="font-size: 13px; color: #5E554D">Photo: New Bedford Historical Society, digitally enhanced</span>
+        </div>
+        <div class="fade-late" aria-hidden="true" style="position: absolute; right: 4vw; bottom: 28px; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 13px; color: #5E554D">
+          <span class="cue" style="display: block; width: 1px; height: 48px; background: #B8892B"></span>
+          <span>Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · The seal -->
+    <section class="panel p2" aria-label="The Martha Briggs Educational Club, since 1920" style="position: sticky; top: 0; height: var(--ph); overflow: hidden; background: #4F246E; z-index: 2">
+      <canvas class="mx-motes" aria-hidden="true"></canvas>
+      <div class="p2-in" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 72px; padding: 24px; box-sizing: border-box">
+        <div class="mx-sealwrap">
+          <span class="mx-glow" aria-hidden="true"></span>
+          <svg class="mx-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="mx-ringpath" d="M100 100 m-92 0 a92 92 0 1 1 184 0 a92 92 0 1 1 -184 0"></path></defs><text><textPath href="#mx-ringpath" textLength="574" lengthAdjust="spacing">THE MARTHA BRIGGS EDUCATIONAL CLUB, INC. ◆ NEW BEDFORD, MASSACHUSETTS ◆ SINCE 1920 ◆</textPath></text></svg>
+          <img class="seal" src="images/club-seal.png" alt="Seal of the Martha Briggs Educational Club, Inc., New Bedford, Mass., 1920" style="width: min(62vh, 78vw); max-width: 620px; height: auto; display: block">
+        </div>
+        <p style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: #D4B062; position: relative">Since 1920</p>
+      </div>
+    </section>
+
+    <!-- 3 · Scholarships -->
+    <section id="apply" class="panel p3" style="position: relative; height: var(--ph); overflow: hidden; background: #F7F2E9; z-index: 3; border-top: 1px solid #D9CDB8">
+      <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box">
+        <div class="p3-h" style="display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center; max-width: 980px">
+          <span aria-hidden="true" style="display: block; width: 64px; height: 1px; background: #B8892B"></span>
+          <h2 style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: clamp(44px, 7.4vw, 104px); line-height: 1.02; letter-spacing: -0.01em; color: #1F1A17">Scholarships for New&nbsp;Bedford students</h2>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 32px">
+            <a href="apply.html" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 14px 28px; background: #4F246E; color: #F7F2E9; text-decoration: none; border-radius: 2px; font-weight: 600; font-size: 17px; line-height: 1.2">Apply</a>
+            <a href="give.html" style="font-weight: 600; font-size: 17px; min-height: 48px; display: inline-flex; align-items: center">Support the fund</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · The club in numbers -->
+    <section aria-labelledby="mx-numbers-h" style="position: relative; z-index: 3; background: #3A1A51; color: #F7F2E9; padding-top: 104px; padding-bottom: 112px" class="sp-m">
+      <div class="wrap" style="display: flex; flex-direction: column; gap: 56px">
+        <h2 id="mx-numbers-h" class="h2" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; line-height: 1.1; color: #F7F2E9">A century of scholarship</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 48px 32px">
+          <div class="mx-stat" data-tilt data-reveal>
+            <span class="mx-statn" data-count="1920" data-from="1838">1920</span>
+            <span class="mx-statl">Founded by women of color in New Bedford to create a student aid fund</span>
+          </div>
+          <div class="mx-stat" data-tilt data-reveal>
+            <span class="mx-statn" data-count="1939" data-from="1900">1939</span>
+            <span class="mx-statl">Incorporated in Massachusetts on November 20</span>
+          </div>
+          <div class="mx-stat" data-tilt data-reveal>
+            <span class="mx-statn" data-count="100" data-since="1920" data-suffix="+">100+</span>
+            <span class="mx-statl">Years supporting the education of young women and men</span>
+          </div>
+          <div class="mx-stat" data-tilt data-reveal>
+            <span class="mx-statn" data-count="{{ club.scholarships.awards_per_year }}" data-prefix="~">~{{ club.scholarships.awards_per_year }}</span>
+            <span class="mx-statl">One-time scholarships awarded each year</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Each year (ribbon) -->
+    <section class="mx-marquee" aria-label="Events each year" style="position: relative; z-index: 3; background: #F7F2E9; border-bottom: 1px solid #D9CDB8; padding: 36px 0">
+      <div class="mx-mtrack">
+        <ul>
+          {% for e in club.events.yearly %}<li>{{ e }}</li>{% endfor %}
+        </ul>
+        <ul aria-hidden="true">
+          {% for e in club.events.yearly %}<li>{{ e }}</li>{% endfor %}
+        </ul>
+      </div>
+      <p style="margin: 20px 0 0; text-align: center"><a href="events.html" style="font-weight: 600; font-size: 17px; min-height: 48px; display: inline-flex; align-items: center">All events and activities</a></p>
+    </section>
+  </main>

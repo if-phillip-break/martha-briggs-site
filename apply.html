@@ -1,0 +1,37 @@
+---
+layout: default
+title: "Apply — Martha Briggs Educational Club"
+description: "How to apply for a Martha Briggs Educational Club scholarship in three steps."
+---
+{% comment %}
+  Page content only. The header, menu and footer come from _includes/.
+  Everyday details (addresses, deadlines, lists) come from _data/club.yml, shown below as club.something.
+  Any other wording can be edited right here, between the tags.
+{% endcomment %}
+{% assign club = site.data.club %}
+  <main id="main">
+    <section class="sp-m" style="padding-top: 80px; padding-bottom: 104px">
+      <div class="wrap" style="display: flex; flex-direction: column; gap: 56px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px">
+          <h1 class="h1 pg-in" style="margin: 0; font-family: 'Libre Caslon Display', serif; font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; color: #4F246E">How to apply</h1>
+        </div>
+        <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px">
+          <li class="pg-2 mx-step" data-io data-tilt style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #1F1A17; padding-top: 20px">
+            <span class="mx-num" aria-hidden="true" style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 96px; line-height: 0.9; color: #4F246E">1</span>
+            <p style="margin: 0; font-family: 'Libre Caslon Text', serif; font-weight: 400; font-size: 24px; line-height: 1.3">Download the application and fill it in.</p>
+            {% include application-button.html label="Download (PDF)" %}
+          </li>
+          <li class="pg-3 mx-step" data-io data-tilt style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #1F1A17; padding-top: 20px">
+            <span class="mx-num" aria-hidden="true" style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 96px; line-height: 0.9; color: #4F246E">2</span>
+            <p style="margin: 0; font-family: 'Libre Caslon Text', serif; font-weight: 400; font-size: 24px; line-height: 1.3">Gather everything on the checklist.</p>
+            <a href="scholarships.html" style="font-weight: 600; font-size: 17px; min-height: 48px; display: inline-flex; align-items: center; align-self: flex-start">What to include</a>
+          </li>
+          <li class="pg-4 mx-step" data-io data-tilt style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #1F1A17; padding-top: 20px">
+            <span class="mx-num" aria-hidden="true" style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 96px; line-height: 0.9; color: #4F246E">3</span>
+            <p style="margin: 0; font-family: 'Libre Caslon Text', serif; font-weight: 400; font-size: 24px; line-height: 1.3">Email it to us, or send it by mail.</p>
+            <span style="font-size: 17px"><a href="mailto:{{ club.contact.email }}" style="font-weight: 600; overflow-wrap: anywhere">{{ club.contact.email }}</a><br>{{ club.contact.mailing_address }}</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>

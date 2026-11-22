@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Public+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/motion.css">
+<script>document.documentElement.classList.add("js")</script>
+<script src="js/menu.js" defer></script>
+<script src="js/motion.js" defer></script>
+</head>
+<body>
+<div class="root" style="width: 100%; min-height: 100vh; background: #F7F2E9; color: #1F1A17; font-family: 'Public Sans', sans-serif; line-height: 1.6; position: relative">
+  <a class="skip" href="#main">Skip to main content</a>
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+</div>
+</body>
+</html>
